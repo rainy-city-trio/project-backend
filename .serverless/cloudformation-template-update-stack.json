@@ -105,7 +105,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-V1/dev/1560434540090-2019-06-13T14:02:20.090Z/project-V1.zip"
+          "S3Key": "serverless/project-V1/dev/1560602480966-2019-06-15T12:41:20.966Z/project-V1.zip"
         },
         "FunctionName": "project-V1-dev-tasks",
         "Handler": "tasks.handler",
@@ -124,14 +124,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "TasksLambdaVersionKS6eSYCHMvNx0Xa22yW4bVP3sxz24ZWViW9NfiqbQM": {
+    "TasksLambdaVersionOOJaBBHjyOvbflK8b1s13lQskQVHyqBqG9gu00yv54M": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "TasksLambdaFunction"
         },
-        "CodeSha256": "E2OizopceHtm4enHB76/7ZL02p/cFkpTgr16bV+ysZs="
+        "CodeSha256": "aPbHFwx76KdBq2oxHyG7pcHxUsXwq6zL0xWEK2DGNck="
       }
     },
     "ApiGatewayRestApi": {
@@ -465,7 +465,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1560434529786": {
+    "ApiGatewayDeployment1560602472552": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -492,17 +492,7 @@
           ]
         },
         "Action": "lambda:InvokeFunction",
-        "Principal": {
-          "Fn::Join": [
-            "",
-            [
-              "apigateway.",
-              {
-                "Ref": "AWS::URLSuffix"
-              }
-            ]
-          ]
-        },
+        "Principal": "apigateway.amazonaws.com",
         "SourceArn": {
           "Fn::Join": [
             "",
@@ -539,7 +529,7 @@
     "TasksLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "TasksLambdaVersionKS6eSYCHMvNx0Xa22yW4bVP3sxz24ZWViW9NfiqbQM"
+        "Ref": "TasksLambdaVersionOOJaBBHjyOvbflK8b1s13lQskQVHyqBqG9gu00yv54M"
       }
     },
     "ServiceEndpoint": {
